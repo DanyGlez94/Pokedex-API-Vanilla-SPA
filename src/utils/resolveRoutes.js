@@ -4,6 +4,6 @@ const resolveRoutes = (route) => {
         return validRoute;
     }
     return route;
-}
+};
 
 export default resolveRoutes;

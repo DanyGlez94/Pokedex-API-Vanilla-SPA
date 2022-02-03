@@ -1,23 +1,26 @@
 import getHash from '../utils/getHash';
-import getData from '../utils/getData';
+import getPokemon from '../utils/getPokemon';
 
 const Character = async () => {
     const id = getHash();
-    const character = await getData(id);
+    const pokemon = await getPokemon(id);
+    const pokemonId = pokemon.id.toString().padStart(3, '0');
+    const pokemonName = pokemon.name[0].toUpperCase() + pokemon.name.slice(1);
+    const pokemonImage = pokemon.sprites.other["official-artwork"].front_default;
+    const pokemonType = pokemon.types[0].type.name[0].toUpperCase() + pokemon.types[0].type.name.slice(1);
+    console.log(pokemon);
     const view = `
         <div class="Characters-inner">
             <article class="Characters-card">
-                <img src="${character.image}" alt="${character.name}">
-                <h2>${character.name}</h2>
+                <img src="${pokemonImage}" alt="${pokemonName}">
+                <h2>${pokemonName}</h2>
             </article>
             <article class="Character-card">
-                <h3>Episodes: <span>${character.episode.length}</span></h3>
-                <h3>Status: <span>${character.status}</span></h3>
-                <h3>Species: <span>${character.species}</span></h3>
-                <h3>Gender: <span>${character.gender}</span></h3>
-                <h3>Origin: <span>${character.origin.name}</span></h3>
-                <h3>Last Location: <span>${character.location.name}</span></h3>
-            </articl>
+                <h3>No. <span>#${pokemonId}</span></h3>
+                <h3>Height: <span>${(pokemon.height)/10}</span> m</h3>
+                <h3>Weight: <span>${(pokemon.weight)/10}</span> kg</h3>
+                <h3>Type: <span>${(pokemonType)}</span></h3>
+            </article>
         </div>
     `;
     return view;

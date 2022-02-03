@@ -1,23 +1,21 @@
-import getData from "../utils/getData"; 
+import getAllPokemon from "../utils/getAllPokemon";
 
-const Home = async () => { 
-    for (let i = 1; i < 20; i++) {
-        const characters = await getData(i);
-        console.log(characters);
-        const view = ` 
-        <div class="Characters"> 
-         
-            <article class="Character-item"> 
-            <a href="#/${characters.id}/"> 
-            <img src="${characters.sprites.front_default}" alt="${characters.name}"> 
-            <h2>${characters.name}</h2> 
-            </a> 
-            </article> 
-        
-        </div> 
-        `; 
-        return view; 
-    }
+const Home = async () => {
+    const allPokemon = await getAllPokemon();
+    console.log(allPokemon);
+    const view = `
+    <div class="Characters">
+    ${allPokemon.map(pokemon => `
+                <article class="Character-item">
+                    <a href="#/${pokemon.id}/">
+                        <img src="${pokemon.sprites.other["official-artwork"].front_default}" alt="${pokemon.name[0].toUpperCase() + pokemon.name.slice(1)}">
+                        <h2>${pokemon.name[0].toUpperCase() + pokemon.name.slice(1)}</h2>
+                    </a>
+                </article>
+            `).join('')}
+        </div>
+    `;
+    return view;
 }; 
 
 export default Home;

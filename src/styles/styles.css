@@ -1,0 +1,136 @@
+@import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Lato:300,400&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #ebf6ff;
+    font-family: 'Lato';
+}
+
+.Header-main {
+    background-color: #E3350D;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+.Header-logo h1 a,
+.Header-nav a {
+    text-decoration: none;
+    color: white;
+    letter-spacing: 3px;
+}
+
+#content {
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.Characters {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 1000px;
+}
+
+.Character-item {
+    width: 30%;
+    display: block;
+    background-color: #fff;
+    border-radius: 20px;
+    padding: 20px;
+    text-align: -webkit-center;
+    margin: 10px;
+    box-shadow: 0 3px 15px rgba(100, 100, 100, 0.5);
+}
+
+.img-container {
+    background-color: #EEE;
+    border-radius: 50%;
+    margin-top: 20px;
+    height: 150px;
+    width: 150px;
+}
+
+.Character-item a {
+    text-decoration: none;
+    color: black;
+}
+
+.Character-item a img {
+    max-width: 90%;
+}
+
+.info {
+    margin-top: 20px;
+}
+
+.number {
+    background-color: rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    display: inline-block;
+    font-size: 20px;
+    padding: 5px 10px;
+}
+
+.name {
+    letter-spacing: 1px;
+}
+
+.Characters-inner {
+    background-color: #fff;
+    border-radius: 20px;
+    box-shadow: 0 3px 15px rgba(100, 100, 100, 0.5);
+    margin-top: 50px;
+    width: 30%;
+}
+
+.Characters-card {
+    padding: 20px;
+}
+
+.Characters-card img {
+    width: 100%;
+}
+
+.Character-card {
+    background-color: #E3350D;
+    border-radius: 0 0 20px 20px;
+    padding: 20px;
+    color: #eee;
+}
+
+.Character-card h2 {
+    text-align: center;
+    color: #eee;
+    margin-bottom: 12px;
+    letter-spacing: 1px;
+}
+
+.Card-info {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 20px;
+    border-radius: 15px;
+    background-color: #fff;
+    color: #000;
+}
+
+.Card-info div h3:first-child {
+    margin-bottom: 12px;
+}
+
+.img-container-card {
+    background-color: #EEE;
+    border-radius: 50%;
+    margin-top: 20px;
+    /* height: 150px;
+    width: 150px; */
+}

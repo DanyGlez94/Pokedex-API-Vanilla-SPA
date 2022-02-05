@@ -12,14 +12,22 @@ const Character = async () => {
     const view = `
         <div class="Characters-inner">
             <article class="Characters-card">
-                <img src="${pokemonImage}" alt="${pokemonName}">
-                <h2>${pokemonName}</h2>
-            </article>
+                <div class="img-container-card" >
+                    <img src="${pokemonImage}" alt="${pokemonName}">
+                </div>
+                </article>
             <article class="Character-card">
-                <h3>No. <span>#${pokemonId}</span></h3>
-                <h3>Height: <span>${(pokemon.height)/10}</span> m</h3>
-                <h3>Weight: <span>${(pokemon.weight)/10}</span> kg</h3>
-                <h3>Type: <span>${(pokemonType)}</span></h3>
+                <h2>${pokemonName}</h2>
+                <div class="Card-info">
+                    <div>
+                        <h3>No. <span>#${pokemonId}</span></h3>
+                        <h3>Height: <span>${(pokemon.height)/10}</span> m</h3>
+                    </div>
+                    <div>
+                        <h3>Weight: <span>${(pokemon.weight)/10}</span> kg</h3>
+                        <h3>Type: <span>${(pokemonType)}</span></h3>
+                    </div>
+                </div>
             </article>
         </div>
     `;

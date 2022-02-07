@@ -1,0 +1,21 @@
+language: node_js #El lenguaje con el que vamos a trabajar.
+cache: #Implementamos cache.
+  directories: #El directorio que va a cachear será el de npm.
+    - ~/.npm
+node_js: #La versión de node que va a utilizar.
+  - '16'
+git: #Le decimos que utilice git.
+  depth: 3 #Indicamos el nivel de profundidad.
+script: #El script que se va a ejecutar.
+  - yarn build #yarn es la implementación que utiliza Travis.
+deploy: #Generamos la estructura del deploy.
+  provider: pages #Establecemos en dónde va a almacenar lo que genere, en este caso, en Github Pages.
+  edge: true #Nos permite manejar un sistema de control de versiones y cómo se accede.
+  skip-cleanup: true #La estructura de las compilaciones.
+  keep-history: true #Para mantener un historial.
+  github-token: $GITHUB_TOKEN #Nos permite conectarnos con Github.
+  local-dir: dist/ #El directorio sobre el que vamos a trabajar.
+  target-branch: gh-pages #El branch sobre el que guardaremos los elementos.
+  commit_message: "Deploy Release" #Commit generado por Travis.
+  on: #Sobre quien va a actuar, en este caso, sobre la rama master.
+    branch: master
